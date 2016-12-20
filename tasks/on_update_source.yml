@@ -1,0 +1,4 @@
+### Initialize
+- name: Include additional on_update_source tasks
+  include: "{{ on_cosnics_update_source }}"
+  when: on_cosnics_update_source is defined

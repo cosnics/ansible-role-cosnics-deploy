@@ -1,0 +1,31 @@
+project_deploy_hook_on_initialize: "{{ playbook_dir }}/roles/deploy/tasks/on_initialize.yml"
+project_deploy_hook_on_update_source: "{{ playbook_dir }}/roles/deploy/tasks/on_update_source.yml"
+project_deploy_hook_on_create_build_dir: "{{ playbook_dir }}/roles/deploy/tasks/on_create_build_dir.yml"
+project_deploy_hook_on_perform_build: "{{ playbook_dir }}/roles/deploy/tasks/on_perform_build.yml"
+project_deploy_hook_on_make_shared_resources: "{{ playbook_dir }}/roles/deploy/tasks/on_make_shared_resources.yml"
+project_deploy_hook_on_finalize: "{{ playbook_dir }}/roles/deploy/tasks/on_finalize.yml"
+project_deploy_strategy: synchronize
+#project_deploy_strategy: "git"
+#project_git_repo: "https://github.com/cosnics/cosnics.git"
+project_deploy_synchronize_delete: true
+project_deploy_synchronize_timeout: 120
+project_keep_releases: 3
+project_release: "{{timestamp.stdout}}" #timestamp is created in initialize hook
+project_source_path: "{{ project_root }}/source_sync"
+project_shared_path: "{{ project_root }}/shared"
+
+project_templates:
+  - name: "Configuration File"
+    src: "roles/deploy/templates/cosnics-configuration.xml.j2"
+    dest: "files/configuration/configuration.xml"
+    group: "vagrant"
+
+project_shared_children:
+  - path: "storage"
+    src: "storage"
+  - path: "cache"
+    src: "cache"
+  - path: "web/Files/Chamilo/Core/Repository/ContentObject/Hotpotatoes"
+    src: "storage/hotpotatoes"
+  - path: "web/Files/Chamilo/Application/Weblcms/Tool/Implementation/Chat/Public"
+    src: "chat"

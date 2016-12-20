@@ -1,0 +1,23 @@
+### Initialize
+- name: Include additional on_finalize tasks
+  include: "{{ on_cosnics_finalize }}"
+  when: on_cosnics_finalize is defined
+- name: ensure group has write right in cache folder
+  file: path={{ project_shared_path }}/cache state=directory mode="g+w" recurse=yes
+  run_once: true
+- name: ensure group has write right in storage folder
+  file: path={{ project_shared_path }}/storage state=directory mode="g+w"
+  run_once: true
+- name: ensure log folder exists and web group has write rights
+  file: path={{ project_shared_path }}/storage/logs state=directory mode="g+w"
+  run_once: true
+- name: Remove Chat logs
+  file: "path='{{ project_shared_path }}/storage/logs/phpfreechat/cache' state=absent"
+  run_once: true
+- name: Reset the opcache
+  uri:
+    url: "{{ opcache_url }}"
+    return_content: yes
+  register: opcache_result
+  when: opcache_reset
+- debug: msg="{{ opcache_result.content }}"

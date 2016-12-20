@@ -1,0 +1,4 @@
+### Initialize
+- name: Include additional on_perform_build tasks
+  include: "{{ on_cosnics_perform_build }}"
+  when: on_cosnics_perform_build is defined

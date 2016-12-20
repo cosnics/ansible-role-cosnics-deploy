@@ -1,0 +1,11 @@
+---
+# defaults file for cosnics-deploy
+cosnics_deploy_opcache_reset: true
+cosnics_deploy_opcache_url: "http://localhost/tools/opcache/reset.php"
+cosnics_deploy_database_host: "localhost"
+cosnics_deploy_database_name: ""
+cosnics_deploy_database_username: ""
+cosnics_deploy_database_password: ""
+cosnics_deploy_hashing_algorithm: ""
+cosnics_deploy_hotpotatoes_base_path: "{{ deploy_helper.new_release_path }}/web/Files/Chamilo/Core/Repository/ContentObject/"
+cosnics_deploy_kernel_location: chamilo.libraries.architecture.bootstrap.kernel

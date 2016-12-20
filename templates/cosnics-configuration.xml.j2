@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <!-- Database -->
+        <parameter
+                key="chamilo.configuration.database"
+                type="collection">
+            <parameter key="driver">mysql</parameter>
+            <parameter key="username">{{ cosnics_deploy_database_username }}</parameter>
+            <parameter key="password">{{ cosnics_deploy_database_password }}</parameter>
+            <parameter key="host">{{cosnics_deploy_database_host}}</parameter>
+            <parameter key="name">{{cosnics_deploy_database_name}}</parameter>
+            <parameter key="charset">utf8</parameter>
+        </parameter>
+
+        <!-- Storage -->
+        <parameter
+                key="chamilo.configuration.storage"
+                type="collection">
+            <parameter key="archive_path">{{ project_root }}/current/storage/archive/</parameter>
+            <parameter key="cache_path">{{ deploy_helper.new_release_path }}/cache/{{cosnics_deploy_timestamp.stdout}}/</parameter>
+            <parameter key="garbage_path">{{ project_root }}/current/storage/garbage/</parameter>
+            <parameter key="hotpotatoes_path">{{ project_root }}/current/web/Files/Chamilo/Core/Repository/ContentObject/Hotpotatoes</parameter>
+            <parameter key="logs_path">{{ project_root }}/current/storage/logs/</parameter>
+            <parameter key="repository_path">{{ project_root }}/current/storage/repository/</parameter>
+            <parameter key="scorm_path">{{ project_root }}/current/storage/scorm/</parameter>
+            <parameter key="temp_path">{{ project_root }}/current/storage/temp/</parameter>
+            <parameter key="userpictures_path">{{ project_root }}/current/storage/userpictures/</parameter>
+        </parameter>
+
+        <parameter key="chamilo.configuration.general.security_key">{{ cosnics_deploy_security_key }}</parameter>
+        <parameter key="chamilo.configuration.general.hashing_algorithm">{{ cosnics_deploy_hashing_algorithm }}</parameter>
+        <parameter key="chamilo.configuration.general.install_date">1456390191</parameter>
+        <parameter key="chamilo.configuration.general.language">nl</parameter>
+        <parameter key="chamilo.configuration.general.theme">Aqua</parameter>
+        <parameter key="chamilo.configuration.debug.show_errors">0</parameter>
+        <parameter key="chamilo.configuration.debug.enable_query_cache">1</parameter>
+        <parameter key="chamilo.configuration.session.session_handler">php</parameter>
+        <parameter key="chamilo.configuration.kernel.service">{{cosnics_deploy_kernel_location}}</parameter>
+        <parameter key="chamilo.configuration.version">7</parameter>
+
+        <parameter
+                key="chamilo.configuration.error_handling"
+                type="collection">
+            <parameter
+                    key="exception_logger"
+                    type="collection">
+                <parameter key="file">Chamilo\Libraries\Architecture\ErrorHandler\ExceptionLogger\FileExceptionLogger</parameter>
+            </parameter>
+            <parameter
+                    key="exception_logger_builder"
+                    type="collection">
+                <parameter key="file">Chamilo\Libraries\Architecture\ErrorHandler\ExceptionLogger\FileExceptionLoggerBuilder</parameter>
+            </parameter>
+        </parameter>
+    </parameters>
+</container>

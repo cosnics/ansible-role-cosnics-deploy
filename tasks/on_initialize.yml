@@ -1,0 +1,8 @@
+### Initialize
+- name: Include additional on_initialize tasks
+  include: "{{ on_cosnics_initialize }}"
+  when: on_cosnics_initialize is defined
+- name: Timestamp
+  local_action: shell date +%s
+  register: cosnics_deploy_timestamp
+  run_once: true

@@ -1,0 +1,4 @@
+### Initialize
+- name: Include additional on_create_build_dir tasks
+  include: "{{ on_cosnics_create_build_dir }}"
+  when: on_cosnics_create_build_dir is defined
