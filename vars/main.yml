@@ -16,7 +16,7 @@ project_shared_path: "{{ project_root }}/shared"
 
 project_templates:
   - name: "Configuration File"
-    src: "roles/deploy/templates/cosnics-configuration.xml.j2"
+    src: "{{cosnics_deploy_role_path}}/templates/cosnics-configuration.xml.j2"
     dest: "files/configuration/configuration.xml"
     group: "vagrant"
 
