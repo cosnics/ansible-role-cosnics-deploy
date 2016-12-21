@@ -1,1 +1,3 @@
-cosnics_deploy_role_path: "{{role_path}}"
+- name: determine the current role path #until a fix is found to disable lazy evaluation of magic variables
+  set_fact:
+    cosnics_deploy_role_path: "{{role_path}}"
