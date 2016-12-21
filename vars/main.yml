@@ -10,7 +10,7 @@ project_deploy_strategy: synchronize
 project_deploy_synchronize_delete: true
 project_deploy_synchronize_timeout: 120
 project_keep_releases: 3
-project_release: "{{timestamp.stdout}}" #timestamp is created in initialize hook
+project_release: "{{cosnics_deploy_timestamp.stdout}}" #timestamp is created in initialize hook
 project_source_path: "{{ project_root }}/source_sync"
 project_shared_path: "{{ project_root }}/shared"
 
