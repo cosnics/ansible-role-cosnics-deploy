@@ -16,7 +16,7 @@
   run_once: true
 - name: Reset the opcache
   uri:
-    url: "{{ opcache_url }}"
+    url: "{{ cosnics_deploy_opcache_url }}"
     return_content: yes
   register: cosnics_deploy_opcache_result
   when: cosnics_deploy_opcache_reset
