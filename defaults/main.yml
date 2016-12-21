@@ -10,3 +10,4 @@ cosnics_deploy_hashing_algorithm: ""
 cosnics_deploy_hotpotatoes_base_path: "{{ deploy_helper.new_release_path }}/web/Files/Chamilo/Core/Repository/ContentObject/"
 cosnics_deploy_kernel_location: chamilo.libraries.architecture.bootstrap.kernel
 cosnics_deploy_security_key: ""
+cosnics_deploy_group: ""
