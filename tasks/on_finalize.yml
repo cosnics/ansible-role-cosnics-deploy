@@ -18,6 +18,6 @@
   uri:
     url: "{{ opcache_url }}"
     return_content: yes
-  register: opcache_result
-  when: opcache_reset
-- debug: msg="{{ opcache_result.content }}"
+  register: cosnics_deploy_opcache_result
+  when: cosnics_deploy_opcache_reset
+- debug: msg="{{ cosnics_deploy_opcache_result.content }}"
