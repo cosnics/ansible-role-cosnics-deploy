@@ -1,9 +1,10 @@
-project_deploy_hook_on_initialize: "tasks/on_initialize.yml"
-project_deploy_hook_on_update_source: "tasks/on_update_source.yml"
-project_deploy_hook_on_create_build_dir: "tasks/on_create_build_dir.yml"
-project_deploy_hook_on_perform_build: "tasks/on_perform_build.yml"
-project_deploy_hook_on_make_shared_resources: "tasks/on_make_shared_resources.yml"
-project_deploy_hook_on_finalize: "tasks/on_finalize.yml"
+role_dir: "{{ lookup('pipe','pwd')|dirname }}" #ansible doesn't have a parameter to get the path of the current included role
+project_deploy_hook_on_initialize: "{{role_dir}}/tasks/on_initialize.yml"
+project_deploy_hook_on_update_source: "{{role_dir}}/tasks/on_update_source.yml"
+project_deploy_hook_on_create_build_dir: "{{role_dir}}/tasks/on_create_build_dir.yml"
+project_deploy_hook_on_perform_build: "{{role_dir}}/tasks/on_perform_build.yml"
+project_deploy_hook_on_make_shared_resources: "{{role_dir}}/tasks/on_make_shared_resources.yml"
+project_deploy_hook_on_finalize: "{{role_dir}}/tasks/on_finalize.yml"
 project_deploy_strategy: synchronize
 #project_deploy_strategy: "git"
 #project_git_repo: "https://github.com/cosnics/cosnics.git"
