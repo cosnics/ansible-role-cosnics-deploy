@@ -2,8 +2,10 @@
 - name: Include additional on_make_shared_resources tasks
   include: "{{ on_cosnics_make_shared_resources }}"
   when: on_cosnics_make_shared_resources is defined
-- name: ensure release has correct group
+- name: ensure webserver group has access to release folder
   shell: "chown -R :{{cosnics_deploy_group}} {{ deploy_helper.new_release_path }}"
+- name: chmod g+s to ensure webserver group has access to created subfolders in release
+  shell: "chmod -R g+s {{ deploy_helper.new_release_path }}"
 - name: ensure legacy webservice dir exists in web dir
   file: path={{ deploy_helper.new_release_path }}/web/application/weblcms/tool/ephorus/php/webservice state=directory mode="g+r" recurse=yes
 - name: soft link the wsdl
