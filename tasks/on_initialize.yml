@@ -6,3 +6,9 @@
   local_action: shell date +%s
   register: cosnics_deploy_timestamp
   run_once: true
+- name: Ensure project root exists and has the correct rights
+  file:
+    path: "{{project_root}}"
+    state: directory
+    group: "{{cosnics_deploy_group}}"
+    mode: "g+s"
