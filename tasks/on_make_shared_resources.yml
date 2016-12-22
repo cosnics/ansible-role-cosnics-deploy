@@ -10,3 +10,20 @@
   file: src={{ deploy_helper.new_release_path }}/src/Chamilo/Application/Weblcms/Tool/Implementation/Ephorus/Webservice/ephorus_reporting_service.wsdl dest={{ deploy_helper.new_release_path }}/web/application/weblcms/tool/ephorus/php/webservice/ephorus_reporting_service.wsdl state=link
 - name: soft link the soap server
   file: src={{ deploy_helper.new_release_path }}/src/Chamilo/Application/Weblcms/Tool/Implementation/Ephorus/Webservice/ephorus_reporting_service.php dest={{ deploy_helper.new_release_path }}/web/application/weblcms/tool/ephorus/php/webservice/ephorus_reporting_service.php state=link
+
+### Make shared resources
+- name: Ensure shared sources are present
+  file: "path='{{ deploy_helper.shared_path }}/{{ item.src }}' state={{ item.type|default('directory') }}"
+  with_items: "{{ cosnics_shared_children }}"
+
+- name: Ensure directories for shared paths to go into are present
+  file: "path={{ [deploy_helper.new_release_path, item.path] | join('/') | dirname }} state=directory"
+  with_items: "{{ cosnics_shared_children }}"
+
+- name: Ensure shared paths themselves are absent
+  file: "path='{{ deploy_helper.new_release_path }}/{{ item.path }}' state=absent"
+  with_items: "{{ cosnics_shared_children }}"
+
+- name: Create shared symlinks
+  file: "path='{{ deploy_helper.new_release_path }}/{{ item.path }}' src='{{ deploy_helper.shared_path }}/{{ item.src }}' state=link"
+  with_items: "{{ cosnics_shared_children }}"

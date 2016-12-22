@@ -20,7 +20,7 @@ project_templates:
     dest: "files/configuration/configuration.xml"
     group: "vagrant"
 
-project_shared_children:
+cosnics_shared_children:
   - path: "storage"
     src: "storage"
   - path: "cache"
