@@ -18,7 +18,7 @@ project_templates:
   - name: "Configuration File"
     src: "{{cosnics_deploy_role_path}}/templates/cosnics-configuration.xml.j2"
     dest: "files/configuration/configuration.xml"
-    group: "vagrant"
+    group: "{{cosnics_deploy_group}}"
 
 cosnics_shared_children:
   - path: "storage"
