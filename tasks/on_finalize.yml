@@ -21,3 +21,4 @@
   register: cosnics_deploy_opcache_result
   when: cosnics_deploy_opcache_reset
 - debug: msg="{{ cosnics_deploy_opcache_result.content }}"
+  when: cosnics_deploy_opcache_reset
