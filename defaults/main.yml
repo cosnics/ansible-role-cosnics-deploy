@@ -4,6 +4,7 @@ cosnics_deploy_opcache_reset: true
 cosnics_deploy_opcache_url: "http://localhost/tools/opcache/reset.php"
 cosnics_deploy_database_host: "localhost"
 cosnics_deploy_database_name: ""
+cosnics_deploy_test_database_name: ""
 cosnics_deploy_database_username: ""
 cosnics_deploy_database_password: ""
 cosnics_deploy_hashing_algorithm: ""

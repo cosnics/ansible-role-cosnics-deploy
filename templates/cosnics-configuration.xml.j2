@@ -16,6 +16,17 @@
             <parameter key="charset">utf8</parameter>
         </parameter>
 
+       <parameter
+                key=“chamilo.configuration.database.test”
+                type=“collection”>
+            <parameter key=“driver”>mysqli</parameter>
+            <parameter key=“username”>{{ cosnics_deploy_database_username }}</parameter>
+            <parameter key=“password”>{{ cosnics_deploy_database_password }}</parameter>
+            <parameter key=“host”>{{cosnics_deploy_database_host}}</parameter>
+            <parameter key=“name”>{{cosnics_deploy_test_database_name}}</parameter>
+            <parameter key=“charset”>utf8</parameter>
+        </parameter>
+
         <!-- Storage -->
         <parameter
                 key="chamilo.configuration.storage"
