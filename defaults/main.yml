@@ -12,3 +12,4 @@ cosnics_deploy_hotpotatoes_base_path: "{{ deploy_helper.new_release_path }}/web/
 cosnics_deploy_kernel_location: chamilo.libraries.architecture.bootstrap.kernel
 cosnics_deploy_security_key: ""
 cosnics_deploy_group: ""
+number_of_releases_kept: 3
