@@ -60,11 +60,17 @@
                     key="exception_logger"
                     type="collection">
                 <parameter key="file">Chamilo\Libraries\Architecture\ErrorHandler\ExceptionLogger\FileExceptionLogger</parameter>
+                {%- if sentry_dsn is defined and sentry_dsn -%}
+                <parameter key="sentry">Chamilo\Libraries\Architecture\ErrorHandler\ExceptionLogger\SentryExceptionLogger</parameter>
+                {%- endif -%}
             </parameter>
             <parameter
                     key="exception_logger_builder"
                     type="collection">
                 <parameter key="file">Chamilo\Libraries\Architecture\ErrorHandler\ExceptionLogger\FileExceptionLoggerBuilder</parameter>
+                {%- if sentry_dsn is defined and sentry_dsn -%}
+                <parameter key="sentry">Chamilo\Libraries\Architecture\ErrorHandler\ExceptionLogger\SentryExceptionLoggerBuilder</parameter>
+                {%- endif -%}
             </parameter>
             {%- if sentry_dsn is defined and sentry_dsn -%}
             <parameter key="sentry_error_logger" type="collection">
