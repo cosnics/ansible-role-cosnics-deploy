@@ -2,6 +2,8 @@
 - name: Include additional on_finalize tasks
   include: "{{ on_cosnics_finalize }}"
   when: on_cosnics_finalize is defined
+- name: Clear and WarmUp Chamilo cache
+  shell: php {{ chamilo_directory }}/src/console chamilo:cache:clear -w
 - name: ensure group has write right in cache folder
   file: path={{ project_shared_path }}/cache state=directory mode="g+w" recurse=yes
   run_once: true
