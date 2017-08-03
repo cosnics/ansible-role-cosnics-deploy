@@ -3,7 +3,7 @@
   include: "{{ on_cosnics_finalize }}"
   when: on_cosnics_finalize is defined
 - name: Clear and Warmup Cosnics cache
-  shell: php {{ deploy_helper.new_release_path }}/src/console chamilo:cache:clear -w
+  shell: php {{ deploy_helper.new_release_path }}/console chamilo:cache:clear -w
 - name: ensure group has write right in cache folder
   file: path={{ project_shared_path }}/cache state=directory mode="g+w" recurse=yes
   run_once: true
