@@ -13,6 +13,9 @@
   run_once: true
 - name: Clear and Warmup Cosnics cache
   shell: php {{ deploy_helper.new_release_path }}/console chamilo:cache:clear -w
+- name: ensure group has write right in the cache sub folder of this release
+  file: path={{ project_shared_path }}/cache/{{cosnics_deploy_timestamp.stdout}} state=directory mode="g+w" recurse=yes
+  run_once: true #the cache folder should be shared between servers.
 - name: Remove Chat logs
   file: "path='{{ project_shared_path }}/storage/logs/phpfreechat/cache' state=absent"
   run_once: true
