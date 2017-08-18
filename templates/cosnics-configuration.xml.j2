@@ -79,8 +79,8 @@
             {%- endif -%}
         </parameter>
         {%- if extra_cosnics_config_parameters is defined and extra_cosnics_config_parameters -%}
-            {% for key, value in extra_cosnics_config_parameters.items() %}
-                <parameter key="{{key}}">{{value}}</parameter>
+            {% for parameter in extra_cosnics_config_parameters.items() %}
+                <parameter key="{{parameter.key}}">{{parameter.value}}</parameter>
             {% endfor %}
         {%- endif -%}
     </parameters>
