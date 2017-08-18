@@ -6,12 +6,6 @@
   shell: "chown -R :{{cosnics_deploy_group}} {{ deploy_helper.new_release_path }}"
 - name: chmod g+s to ensure webserver group has access to created subfolders in release
   shell: "chmod -R g+s {{ deploy_helper.new_release_path }}"
-- name: ensure legacy webservice dir exists in web dir
-  file: path={{ deploy_helper.new_release_path }}/web/application/weblcms/tool/ephorus/php/webservice state=directory mode="g+r" recurse=yes
-- name: soft link the wsdl
-  file: src={{ deploy_helper.new_release_path }}/src/Chamilo/Application/Weblcms/Tool/Implementation/Ephorus/Webservice/ephorus_reporting_service.wsdl dest={{ deploy_helper.new_release_path }}/web/application/weblcms/tool/ephorus/php/webservice/ephorus_reporting_service.wsdl state=link
-- name: soft link the soap server
-  file: src={{ deploy_helper.new_release_path }}/src/Chamilo/Application/Weblcms/Tool/Implementation/Ephorus/Webservice/ephorus_reporting_service.php dest={{ deploy_helper.new_release_path }}/web/application/weblcms/tool/ephorus/php/webservice/ephorus_reporting_service.php state=link
 
 ### Make shared resources
 - name: Ensure shared sources are present

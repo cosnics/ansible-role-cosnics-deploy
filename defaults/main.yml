@@ -14,3 +14,4 @@ cosnics_deploy_security_key: ""
 cosnics_deploy_group: ""
 number_of_releases_kept: 3
 sentry_dsn: ""
+project_templates_extra: []

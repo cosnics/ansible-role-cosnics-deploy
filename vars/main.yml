@@ -14,11 +14,13 @@ project_release: "{{cosnics_deploy_timestamp.stdout}}" #timestamp is created in 
 project_source_path: "{{ project_root }}/source_sync"
 project_shared_path: "{{ project_root }}/shared"
 
-project_templates:
+project_templates_cosnics:
   - name: "Configuration File"
     src: "{{cosnics_deploy_role_path}}/templates/cosnics-configuration.xml.j2"
     dest: "files/configuration/configuration.xml"
     group: "{{cosnics_deploy_group}}"
+
+project_templates: "{{project_templates_cosnics}} + {{project_templates_extra}}"
 
 cosnics_shared_children:
   - path: "storage"
