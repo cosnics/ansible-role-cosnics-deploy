@@ -9,7 +9,7 @@
   file: path={{ project_shared_path }}/storage state=directory mode="g+w"
   run_once: true
 - name: ensure log folder exists and web group has write rights
-  file: path={{ project_shared_path }}/storage/logs state=directory mode="g+w"
+  file: path={{ project_shared_path }}/storage/logs state=directory mode="g+w" recurse=yes
   run_once: true
 - name: Clear and Warmup Cosnics cache
   shell: php {{ deploy_helper.new_release_path }}/console chamilo:cache:clear -w
