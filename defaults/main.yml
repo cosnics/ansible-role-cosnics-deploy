@@ -15,3 +15,4 @@ cosnics_deploy_group: ""
 number_of_releases_kept: 3
 sentry_dsn: ""
 project_templates_extra: []
+cosnics_deploy_show_errors: 0
