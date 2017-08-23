@@ -31,15 +31,15 @@
         <parameter
                 key="chamilo.configuration.storage"
                 type="collection">
-            <parameter key="archive_path">{{ deploy_helper.new_release_path }}/storage/archive/</parameter>
+            <parameter key="archive_path">{{ project_root }}/current/storage/archive/</parameter>
             <parameter key="cache_path">{{ deploy_helper.new_release_path }}/cache/{{cosnics_deploy_timestamp.stdout}}/</parameter>
-            <parameter key="garbage_path">{{ deploy_helper.new_release_path }}/storage/garbage/</parameter>
-            <parameter key="hotpotatoes_path">{{ deploy_helper.new_release_path }}/web/Files/Chamilo/Core/Repository/ContentObject/Hotpotatoes</parameter>
-            <parameter key="logs_path">{{ deploy_helper.new_release_path }}/storage/logs/</parameter>
-            <parameter key="repository_path">{{ deploy_helper.new_release_path }}/storage/repository/</parameter>
-            <parameter key="scorm_path">{{ deploy_helper.new_release_path }}/storage/scorm/</parameter>
-            <parameter key="temp_path">{{ deploy_helper.new_release_path }}/storage/temp/</parameter>
-            <parameter key="userpictures_path">{{ deploy_helper.new_release_path }}/storage/userpictures/</parameter>
+            <parameter key="garbage_path">{{ project_root }}/current/storage/garbage/</parameter>
+            <parameter key="hotpotatoes_path">{{ project_root }}/current/web/Files/Chamilo/Core/Repository/ContentObject/Hotpotatoes</parameter>
+            <parameter key="logs_path">{{ deploy_helper.new_release_path }}/cache/{{cosnics_deploy_timestamp.stdout}}/storage/logs/</parameter>
+            <parameter key="repository_path">{{ project_root }}/current/storage/repository/</parameter>
+            <parameter key="scorm_path">{{ project_root }}/current/storage/scorm/</parameter>
+            <parameter key="temp_path">{{ project_root }}/current/storage/temp/</parameter>
+            <parameter key="userpictures_path">{{ project_root }}/current/storage/userpictures/</parameter>
         </parameter>
 
         <parameter key="chamilo.configuration.general.security_key">{{ cosnics_deploy_security_key }}</parameter>
