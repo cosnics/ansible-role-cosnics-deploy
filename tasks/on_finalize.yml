@@ -19,11 +19,3 @@
 - name: Remove Chat logs
   file: "path='{{ project_shared_path }}/storage/logs/phpfreechat/cache' state=absent"
   run_once: true
-- name: Reset the opcache
-  uri:
-    url: "{{ cosnics_deploy_opcache_url }}"
-    return_content: yes
-  register: cosnics_deploy_opcache_result
-  when: cosnics_deploy_opcache_reset
-- debug: msg="{{ cosnics_deploy_opcache_result.content }}"
-  when: cosnics_deploy_opcache_reset

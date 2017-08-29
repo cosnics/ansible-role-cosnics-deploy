@@ -1,7 +1,6 @@
 ---
 # defaults file for cosnics-deploy
-cosnics_deploy_opcache_reset: true
-cosnics_deploy_opcache_url: "http://localhost/tools/opcache/reset.php"
+cosnics_url: "https://demo.cosnics.org"
 cosnics_deploy_database_host: "localhost"
 cosnics_deploy_database_name: ""
 cosnics_deploy_test_database_name: ""
