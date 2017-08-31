@@ -19,6 +19,9 @@ project_templates_cosnics:
     src: "{{cosnics_deploy_role_path}}/templates/cosnics-configuration.xml.j2"
     dest: "files/configuration/configuration.xml"
     group: "{{cosnics_deploy_group}}"
+  - name: "phpmailer configuration"
+    src: "{{ cosnics_deploy_role_path }}/templates/phpmailer.conf.php.j2"
+    dest: "files/configuration/phpmailer.conf.php"
 
 project_templates: "{{project_templates_cosnics}} + {{project_templates_extra}}"
 

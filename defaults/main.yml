@@ -15,3 +15,12 @@ number_of_releases_kept: 3
 sentry_dsn: ""
 project_templates_extra: []
 cosnics_deploy_show_errors: 0
+
+php_mailer_from_email: administrator@platform.com
+php_mailer_from_name: Platform administrator
+php_mailer_host: ''
+php_mailer_port: 25
+php_mailer_mailer: mail #mail, sendmail or smtp
+php_mailer_auth: 0
+php_mailer_user: ''
+php_mailer_pass: ''
