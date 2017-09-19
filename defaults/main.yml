@@ -24,3 +24,13 @@ php_mailer_mailer: mail #mail, sendmail or smtp
 php_mailer_auth: 0
 php_mailer_user: ''
 php_mailer_pass: ''
+
+cosnics_shared_children:
+  - path: "storage"
+    src: "storage"
+  - path: "cache"
+    src: "cache"
+  - path: "web/Files/Chamilo/Core/Repository/ContentObject/Hotpotatoes"
+    src: "storage/hotpotatoes"
+  - path: "web/Files/Chamilo/Application/Weblcms/Tool/Implementation/Chat/Public"
+    src: "chat"

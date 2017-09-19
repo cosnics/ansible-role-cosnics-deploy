@@ -24,13 +24,3 @@ project_templates_cosnics:
     dest: "files/configuration/phpmailer.conf.php"
 
 project_templates: "{{project_templates_cosnics}} + {{project_templates_extra}}"
-
-cosnics_shared_children:
-  - path: "storage"
-    src: "storage"
-  - path: "cache"
-    src: "cache"
-  - path: "web/Files/Chamilo/Core/Repository/ContentObject/Hotpotatoes"
-    src: "storage/hotpotatoes"
-  - path: "web/Files/Chamilo/Application/Weblcms/Tool/Implementation/Chat/Public"
-    src: "chat"
