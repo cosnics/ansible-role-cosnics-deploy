@@ -34,3 +34,7 @@ cosnics_shared_children:
     src: "storage/hotpotatoes"
   - path: "web/Files/Chamilo/Application/Weblcms/Tool/Implementation/Chat/Public"
     src: "chat"
+
+cosnics_logs_path: "{{ project_shared_path }}/storage/logs"
+cosnics_storage_path: "{{ project_shared_path }}/storage"
+cosnics_cache_path: "{{ project_shared_path }}/cache"
