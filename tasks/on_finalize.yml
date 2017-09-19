@@ -3,10 +3,10 @@
   include: "{{ on_cosnics_finalize }}"
   when: on_cosnics_finalize is defined
 - name: ensure group has write right in cache folder
-  file: path={{ cosnics_cache_path }} state=directory mode="g+w"
+  file: path={{ cosnics_cache_path }} mode="g+w"
   run_once: true
 - name: ensure group has write right in storage folder
-  file: path={{ cosnics_storage_path }} state=directory mode="g+w"
+  file: path={{ cosnics_storage_path }} mode="g+w"
   run_once: true
 - name: ensure log folder exists and web group has write rights
   file: path={{ cosnics_logs_path }} state=directory mode="g+w" recurse=yes
