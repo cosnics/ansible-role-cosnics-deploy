@@ -36,5 +36,8 @@ cosnics_shared_children:
     src: "chat"
 
 cosnics_logs_path: "{{ project_shared_path }}/storage/logs"
+cosnics_logs_path_state: "directory"
 cosnics_storage_path: "{{ project_shared_path }}/storage"
+cosnics_storage_path_state: "directory"
 cosnics_cache_path: "{{ project_shared_path }}/cache"
+cosnics_cache_path_state: "directory"
