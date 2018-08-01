@@ -12,6 +12,7 @@
 - name: ensure log folder exists and web group has write rights
   file: path={{ cosnics_logs_path }} state=directory mode="g+w" recurse=yes
   run_once: true
+  become: true
 - name: Clear and Warmup Cosnics cache
   shell: php {{ deploy_helper.new_release_path }}/console chamilo:cache:clear -w
 - name: ensure group has write right in the cache sub folder of this release
