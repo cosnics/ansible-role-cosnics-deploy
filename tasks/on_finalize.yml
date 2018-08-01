@@ -4,6 +4,7 @@
   when: on_cosnics_finalize is defined
 - name: ensure group has write right in cache folder
   shell: "chmod g+w {{ cosnics_cache_path }}" #could be a softlink in certain setups
+  become: true
   run_once: true
 - name: ensure group has write right in storage folder
   shell: "chmod g+w {{ cosnics_storage_path }}" #could be a softlink in certain setups
