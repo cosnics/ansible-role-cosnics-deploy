@@ -17,8 +17,12 @@
 - name: Clear and Warmup Cosnics cache
   shell: php {{ deploy_helper.new_release_path }}/console chamilo:cache:clear -w
   run_once: true
+- name: ensure cache has correct rights
+  file: path={{ cosnics_cache_path }}/{{cosnics_deploy_timestamp.stdout}} state=directory mode="g+w" group=web
+  become: true
+  run_once: true  
 - name: ensure group has write right in the cache sub folder of this release
-  file: path={{ cosnics_cache_path }}/{{cosnics_deploy_timestamp.stdout}} mode="g+w" recurse=yes
+  shell: "chmod -R g+w {{ cosnics_cache_path }}/{{cosnics_deploy_timestamp.stdout}}"
   run_once: true #the cache folder should be shared between servers.
   become: true
 - name: Remove Chat logs
