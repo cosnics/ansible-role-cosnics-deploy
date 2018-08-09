@@ -18,7 +18,7 @@
   shell: php {{ deploy_helper.new_release_path }}/console chamilo:cache:clear -w
   run_once: true
 - name: ensure group has write right in the cache sub folder of this release
-  file: path={{ cosnics_cache_path }}/{{cosnics_deploy_timestamp.stdout}} state=directory mode="g+w" recurse=yes
+  file: path={{ cosnics_cache_path }}/{{cosnics_deploy_timestamp.stdout}} mode="g+w" recurse=yes
   run_once: true #the cache folder should be shared between servers.
   become: true
 - name: Remove Chat logs
