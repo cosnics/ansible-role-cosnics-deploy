@@ -13,6 +13,7 @@ project_keep_releases: "{{number_of_releases_kept}}"
 project_release: "{{cosnics_deploy_timestamp.stdout}}" #timestamp is created in initialize hook
 project_source_path: "{{ project_root }}/source_sync"
 project_shared_path: "{{ project_root }}/shared"
+project_has_yarn: false
 
 project_templates_cosnics:
   - name: "Configuration File"
